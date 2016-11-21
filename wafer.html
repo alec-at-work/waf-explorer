@@ -1,0 +1,434 @@
+
+
+<!-- BODY FOR THE Explorer -->
+
+<html>
+<head>
+
+	<title>Autodesk - Web Analytics Foundation Explorer</title>
+	<style>
+
+	@font-face {
+	    font-family: "Artifakt-book";
+	    src: url(chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/css/Artifakt/Artifakt-Element-Book.ttf) format("truetype");
+	}
+
+	body {
+		background: WhiteSmoke;
+		text-align: center;
+		font-family: "Artifakt-book";
+		font-size: 14px;
+	}
+	.holder {
+		position: relative;
+		width: 275px;
+		padding-bottom: 5px;
+	}
+	#logo {
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 7px;
+		opacity: 0.9;
+		margin-bottom: 5px;
+	}
+	#title {
+		width: 90%;
+		padding: 1%;
+		font-size: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/*
+	#enable {
+		width: 60px;
+		padding: 5px;
+		border: 1px solid;
+		border-radius: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 4%;
+		margin-bottom: 2%;
+		text-align: center;
+	}
+	*/
+
+	#toggler {
+		font-size: 200%;
+	}
+	#toggler:hover {
+		text-shadow: 0 0 1px Gold;
+	}
+		.enableOn, .enableOff {
+			background: LightGray;
+			border-color: DimGray;
+			font-color: DarkGray;
+		}
+		.enableOff:hover {
+			background: LightGreen;
+			border-color: LimeGreen;
+			color: ForestGreen;
+		}
+		.enableOff:active {
+			background: ForestGreen;
+			color: LightGreen;
+		}
+		.enableOn:hover {
+			background: LightSalmon;
+			border-color: Salmon;
+			color: DarkRed;
+		}
+		.enableOn:active {
+			background: DarkRed;
+			color: LightSalmon;
+		}
+
+	.off {
+		color: DarkRed;
+	}
+	.on {
+		color: ForestGreen;
+	}
+	.logo-line {
+		width: 90%;
+	}
+	#version-number {
+		padding-top: 1%;
+		font-size: 80%;
+	}
+	#other-options i {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+
+	#open-settings, #information-link, #wafer-launch, #wafer-report, #open-contact,
+	#wafer-report-mobile, #wafer-report-industry, #wafer-report-campaigns, 
+	#wafer-report-traffic, #wafer-report-api-data, #wafer-report-scroll {
+		font-size: 200%;
+		
+		/*
+		padding: 5px;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		border-radius: 5px;
+  		box-shadow: 0 5px 0 0 #999;
+		color: WhiteSmoke;
+		background-color: SlateGray;
+		*/
+	}
+
+	.wafer-btn {
+		padding: 5px;
+		text-align: center;
+		/* color: gray; */
+		cursor: pointer;
+		outline: none;
+		border: none;
+		border-radius: 5px;
+  		/* box-shadow: 0 5px 0 0 #999; */
+  		text-shadow: 0 2px gray;
+		color: LightSteelBlue;
+	/*	background-color: SlateGray; */
+	}
+
+		.wafer-btn:active {
+		  text-shadow: 0 1px black;
+		  transform: translateY(1px);
+		}
+
+	
+	.wafer-report-off {
+		opacity: 0.3;
+	}
+
+	#wafer-launch:not(.wafer-on) {
+		padding: 5px;
+		text-align: center;
+		cursor: pointer;
+  		text-shadow: 0 2px gray;
+		color: LightSteelBlue;
+	}
+
+	#wafer-launch:not(.wafer-on):hover {
+		color: green;
+	}
+			#wafer-launch:active {
+			  text-shadow: 0 1px black;
+			  transform: translateY(1px);
+			  cursor: pointer;
+			}
+			.wafer-on {
+				color: LightGreen;
+				text-shadow: 0 1px black;
+		  		transform: translateY(1px);
+		  		padding: 5px;
+				text-align: center;
+				cursor: pointer;
+			}
+
+
+		#open-settings:hover, #information-link:hover, #open-contact:hover {
+			color: Plum;
+		}
+		#wafer-report-api-data:hover {
+			color: Plum;
+		}
+		#wafer-report-mobile:hover, #wafer-report-industry:hover, 
+		#wafer-report-campaigns:hover, #wafer-report-traffic:hover, 
+		#wafer-report-scroll:hover {
+			color: CornflowerBlue;
+		}
+			.reporter-on {
+				color: CornflowerBlue;
+				text-shadow: 0 1px black;
+		  		transform: translateY(1px);
+			}
+
+/*
+	#open-settings:hover, #information-link:hover {
+		color: Orchid;
+		text-shadow: 0 0 2px MistyRose;
+	}
+	#wafer-launch:not(.wafer-active):hover {
+		color: green;
+		/* text-shadow: 0 0 3px SpringGreen; 
+	}
+		#wafer-launch:active {
+			text-shadow: 0 0 3px SpringGreen;
+		}
+		.wafer-active {
+			color: orange;
+			text-shadow: 0 0 3px GoldenRod;
+		}
+			.wafer-active:hover {
+				color: LightCoral;
+			}
+			.wafer-active:active {
+				color: red;
+			}
+
+	#wafer-report:hover:not(.wafer-report-off) {
+		color: green;
+		text-shadow: 0 0 3px SpringGreen;
+	}
+	
+	
+*/
+	.wafer-opt-holder, .wafer-opt-holder-2 {
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		/* border: 1px dotted green; */
+	}
+
+		.wafer-opt-holder .wafer-opt-block {
+			position: relative;
+			width: 20%;
+			padding-left: 3px;
+			padding-right: 3px;
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			/* border: 1px dotted red; */
+			color: gray;
+		}
+		.wafer-opt-holder-2 .wafer-opt-block {
+			position: relative;
+			width: 25%;
+			padding-left: 3px;
+			padding-right: 3px;
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			/* border: 1px dotted red; */
+			color: gray;
+		}
+		.wafer-opt-label {
+			font-size: 75%;
+		}
+		.wafer-opt-api-label {
+			position: relative;
+			width: 100%;
+			font-size: 80%;	
+			padding-left: 3px;
+			padding-right: 3px;
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			color: gray;
+		}
+		
+		.holder-bump-up div {
+			top: -3px;
+		}
+		
+
+	.section-logo {
+		/* border: 1px dotted purple; */
+		font-size: 95%;
+		padding-top: 2%;
+		color: DarkGray;
+	}
+		
+	.tool-off {
+		color: red;
+	}
+	.hidden {
+		display: none;
+	}
+
+	</style>
+	<link rel="stylesheet" href="/css/font-awesome.css">
+	<script src="jquery.min.recent.js"></script>
+
+</head>
+<body>
+<div class="holder" id="popup" data-active="off">
+	<img id="logo" src="/bar/codeLogo6.png">
+	<div id="title"><b>Web Analytics Foundation Explorer</b></div>
+	<i id="version-number">v 2.1</i>
+	<hr class="logo-line">
+	<!-- <div>Explorer is <b id="modeText" class="off">OFF</b>
+	<div id="enable" class="enableOff">Enable</div> -->
+	<!--
+	<div id="other-options">
+		<i id="information-link" class="fa fa-info" title="Visit the WAFER wiki page for information on how to use the tool."></i>
+		<i id="wafer-launch" class="fa fa-rocket" title="Launch the tool once, on any supported page."></i>
+		<i id="toggler" class="fa fa-power-off" title="Toggle the persistence of the tool ON/OFF. If ON, the tool will load on each supported Page Load"></i>
+		<i id="wafer-report" class="wafer-report-off fa fa-bar-chart" title="Launch the Reporting Tool, on any supported page."></i>
+		<i id="open-settings" class="fa fa-cog" title="Launch the advanced tool settings."></i>
+	</div>
+	-->
+
+	
+	<!--
+	<i>e x p l o r e</i>
+	-->
+
+	<div class="wafer-opt-holder">
+		<div class="wafer-opt-block">
+			<i id="information-link" class="fa fa-info wafer-btn" title="Visit the WAFER wiki page for information on how to use the tool."></i>
+		</div>
+		<div class="wafer-opt-block">
+			<i id="wafer-launch" class="fa fa-rocket" title="Launch the tool once, on any supported page."></i>
+		</div>
+		<div class="wafer-opt-block">
+			<i id="open-settings" class="fa fa-cog wafer-btn" title="Launch the advanced tool settings."></i>
+		</div>
+		<div class="wafer-opt-block">
+			<i id="open-contact" class="fa fa-slack	 wafer-btn" title="Contact the WAFER team."></i>
+		</div>
+
+	</div>
+	<div class="wafer-opt-holder holder-bump-up">
+		
+		<div class="wafer-opt-block wafer-opt-label">
+			guide
+		</div>
+		<div class="wafer-opt-block wafer-opt-label">
+			inspector
+		</div>
+		<div class="wafer-opt-block wafer-opt-label">
+			settings
+		</div>
+		<div class="wafer-opt-block wafer-opt-label">
+			contact
+		</div>
+
+	</div>
+
+	<hr class="logo-line">
+
+	<b class="section-logo">R E P O R T</b>
+
+	<div id="report-options" class="hidden">
+
+		<!-- Report Row 1 -->
+		<div class="wafer-opt-holder-2">
+			<div class="wafer-opt-block">
+				<i id="wafer-report-traffic" class="fa fa-car wafer-btn" aria-hidden="true"></i>
+			</div>
+			<div class="wafer-opt-block">
+				<i id="wafer-report-campaigns" class="fa fa-sign-in wafer-btn" aria-hidden="true"></i>
+			</div>
+			<div class="wafer-opt-block">
+				<i id="wafer-report-industry" class="fa fa-university wafer-btn" aria-hidden="true"></i>
+			</div>
+
+			<!-- Add next ONE here -->
+
+		</div>
+		<div class="wafer-opt-holder-2 holder-bump-up">	
+			<div class="wafer-opt-block wafer-opt-label">
+				traffic
+			</div>
+			<div class="wafer-opt-block wafer-opt-label">
+				sources
+			</div>
+			<div class="wafer-opt-block wafer-opt-label">
+				industry
+			</div>
+
+			<!-- Add next ONE here -->
+
+		</div>
+		
+		<!-- Report Row 2 -->
+		<div class="wafer-opt-holder-2">
+			<div class="wafer-opt-block">
+				<i id="wafer-report-mobile" class="fa fa-laptop wafer-btn" aria-hidden="true"></i>
+			</div>
+			<div class="wafer-opt-block">
+				<i id="wafer-report-scroll" class="fa fa-sort-amount-desc wafer-btn" aria-hidden="true"></i>
+			</div>
+
+			<!-- Add second next ONE here -->
+
+		</div>
+		<div class="wafer-opt-holder-2 holder-bump-up">	
+			<div class="wafer-opt-block wafer-opt-label">
+				technology
+			</div>
+			<div class="wafer-opt-block wafer-opt-label">
+				scroll
+			</div>
+
+			<!-- Add second next ONE here -->
+
+		</div>
+
+	</div>
+
+	<div id="report-credentials" class="hidden">
+		<div class="wafer-opt-holder">
+			<div class="wafer-opt-block">
+				<i id="wafer-report-api-data" class="fa fa-cloud wafer-btn" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="wafer-opt-holder holder-bump-up">
+			<div class="wafer-opt-api-label">
+				We need your credentials
+			</div>
+		</div>
+	</div>
+
+<!--
+	<span id="plusIndicator" class="hidden">
+	<hr id="logo-line">
+	<p>
+		<i id="plusMessage"></i><b id="plusSpace"></b>
+	</p>
+	</span>
+	-->
+</div>
+
+<!-- <script src="google.js"></script> -->
+<script src="waferJS.js"></script>
+
+
+</body>
+</html>

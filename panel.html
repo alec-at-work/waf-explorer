@@ -1,0 +1,61 @@
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="./css/css.css">
+    
+  <link rel="stylesheet" type="text/css" href="./css/font-awesome.css"> 
+    <script src='js/lib/jquery-1.8.2.min.js'></script>
+    <script src='js/paramsSetup.js'></script>
+    <script src='js/providers.js'></script>
+  </head>
+
+<body>
+<div class="wa-inspector-container">
+
+  <!-- the HEADER with options -->
+  <div class="wa-inspector-header">
+    <div id="header">
+      <div>
+        <a href="#" id='clearBtn'><i class="fa fa-times"></i> Clear </a> 
+      </div>
+      
+      <div>
+        <a href="#" id='separatorBtn'><i class="fa fa-minus"></i> Insert Separator </a> 
+      </div>
+      <div>
+          <i class="fa fa-table"></i> <a href="#" id="copyRequestParams">Copy Selected Request</a>
+      </div>
+      <div>
+        <i class="fa fa-code"></i> <a href="#" id="copyRequestRaw">Copy Selected Raw Request</a>
+      </div>
+      <div>
+          Show: 
+          <label><input type="checkbox" id="typeAnalytics" name="analytics" checked>Analytics </label> 
+          <label><input type="checkbox" id="typeLead"  name="lead" checked>Leads </label>
+          <label><input type="checkbox" id="typeRemarketing"  name="remarketing" checked>Remarketing </label>
+          <label><input type="checkbox" id="typeTesting"  name="testing" checked>Testing </label>
+      </div>
+      <div>
+        <label><input type="checkbox" id="selectLatest" name="selectLatest" checked>Select Latest  </label>
+      </div>
+      <div class="right">
+        <a id="wafer-link" href="https://wiki.autodesk.com/x/ntJVDg" target="_blank">WAFER User Guide</a>
+      </div>
+    </div>
+  </div>
+  <!-- the STAGE for Details -->
+  <div class="wa-inspector-detail">
+    <div id="stage">
+      <div id="container"></div>
+      <div id='detail'></div>
+    </div>
+  </div>
+
+</div>
+
+    <script src='js/basicDisplay.js'></script>
+    <script src='js/btnFunctions.js'></script>
+
+  <script src='js/testData.js'></script>
+
+</body>
+</html>

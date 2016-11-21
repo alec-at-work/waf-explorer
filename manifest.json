@@ -1,0 +1,63 @@
+
+{
+  "manifest_version": 2,
+  "name": "Alec Local WAFER Dev",
+  "short_name": "ADSK WAFER - ALEC LOCAL",
+  "description": "Alec Local Dev Version",
+  "version": "9.9.9",
+
+  "homepage_url": "https://wiki.autodesk.com/display/AWA/Web+Analytics+Home",
+  "devtools_page": "devtools.html",
+  "minimum_chrome_version": "40.0",
+  "offline_enabled": true,
+
+  "browser_action": {
+      "icons": [{"38": "/bar/activeLogoReal.png"},{ "38": "/bar/activeLogoReal_plus.png" },
+                { "38": "/bar/inactiveLogoReal.png"},{ "38": "/bar/inactiveLogoReal_plus.png" }],
+      "default_icon": { "38": "/bar/reportLogo4.png" },
+      "default_popup" : "wafer.html"
+    },
+    "icons": {
+      "128":"/bar/reportLogo4.png",
+      "16":"/bar/reportLogo4.png",
+      "48":"/bar/reportLogo4.png",
+      "38":"/bar/reportLogo4.png"
+    }, 
+    "incognito": "spanning",
+
+    "background": {
+      "page" : "background.html",
+      "persistent": true
+    },
+    "permissions": [
+      "tabs",
+      "<all_urls>",
+      "storage",
+      "webRequest",
+      "webRequestBlocking",
+      "contextMenus",
+      "management",
+      "http://*/*",
+      "https://*/*"
+    ],
+    "content_scripts": [{
+      "matches": [ "*://analytics-dev.autodesk.com/*",
+              "http://www.autodesk.com/", "http://www-stg.autodesk.com/", "http://www-qa.autodesk.com/",
+              "https://360.autodesk.com/*","https://a360.autodesk.com/*",
+              "https://fusion360.autodesk.com/projects/all",
+              "https://www.autocad360.com/", "http://www.autodesk.com/*", "https://store.autodesk.com/*",
+              "https://knowledge.autodesk.com/*", "http://knowledge.autodesk.com/",
+              "http://au.autodesk.com/", "http://au-qa.autodesk.com/", "http://au-stg.autodesk.com/",
+              "http://www.autodesk.org/", "http://www-qa.autodesk.org/", "http://www-stg.autodesk.org/",
+              "http://*.autodesk.com/*", "https://*.autodesk.com/*", "*://*.lineshapespace.com/*",
+              "*://*.autodeskplm360.com/*","*://*.cl3ver.com/*", "*://*.lemonly.com/autodesk/*", "*://*.autodesk.co.uk/*",
+              "*://*.autodesk.com.tr/*","*://*.autodesk.fr/*","*://*.autodesk.ca/*", "*://*.autodesk.jp/*", 
+              "*://*.autodesk.de/*", "*://*.autodesk.com.au/*", "*://*.autodesk.ae/*" ],
+      "js": ["pageLoadRun.js","appTracking.js","geoSpoof.js"],
+      "css": ["notifications.css"],
+      "run_at": "document_start"   
+    }],
+  "web_accessible_resources":["vBeta.js","closeX.png","exploreLogo.png","google-analytics-bundle.js","jquery.min.recent.js","vBeta.css",
+          "pep.js","launchWafer.js","jqueryInject.js","notifications.css","clearGEOdata.js","/css/*","loading.gif","/bar/*",
+          "/js/*","/css/Artifakt/*","appTracking.js"]
+}

@@ -1,0 +1,1008 @@
+
+
+<!-- BODY FOR THE Explorer -->
+
+<html>
+<head>
+
+	<title>Autodesk - Web Analytics Foundation Explorer - Settings</title>
+
+	<style>
+
+	@font-face {
+	    font-family: "Artifakt-bold";
+	    src: url(chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/css/Artifakt/Artifakt-Element-Bold.ttf) format("truetype");
+	}
+	@font-face {
+	    font-family: "Artifakt-book";
+	    src: url(chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/css/Artifakt/Artifakt-Element-Book.ttf) format("truetype");
+	}
+
+	body {
+		background: gray;
+		font-family: "Artifakt-book";
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	#settings-container {
+		color: LightSlateGray;
+		width: 60%;
+		border-radius: 5px;
+		background: #f0f0f0;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding: 10px;
+		min-width: 700px;
+	}
+		#settings-container p {
+			padding: 10px;
+			width: 80%;
+			margin: auto;
+			font-size: 110%;
+		}
+
+	#logo {
+		width: 80%;
+	}
+	#tool-setting-options {
+		text-align: center;
+		font-size: 110%;
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 1%;
+		vertical-align: middle;
+		padding: 2px;
+		border-bottom: 1px solid DarkGray;
+		border-top: 1px solid DarkGray;
+		background: AliceBlue;
+		/* background: Gainsboro; */
+
+	}
+	#tool-setting-options div {
+		display: inline-block;
+	}
+	.setting-option {
+		position: relative;
+		display: inline-block;
+		/* width: 20%; */
+		padding-left: 2%;
+		padding-right: 2%;
+		padding-top: 1%;
+	    padding-bottom: 1%;
+		margin-right: 1%;
+		margin-left: 1%;
+	/*	margin-top: 1px; */
+		vertical-align: middle;
+	   /* background: #B8B8B8; 
+	    color: white; */
+	    color: gray;
+	    /* font-family: "Trebuchet MS", Helvetica, sans-serif; */
+	    font-family: "Artifakt-book";
+	    text-align: center;
+	    border-radius: 3px;
+	    
+	    transition: all 0.3s ease 0s;
+
+	}
+		.active-option {
+			color: DarkSlateGray;
+		  	text-transform: bold;
+		}
+	/*		.active-option:hover {
+			color: DarkGray;
+		}    */
+	.setting-option:hover:not(.active-option) {
+		opacity: 1.0;
+		background: DarkSlateGray;
+		color: GhostWhite;
+	}
+	.content-hide {
+		display: none;
+	}
+
+	#footer {
+		padding: 5px;
+		font-size: 75%;
+		color: SlateGray;
+	}
+
+	.temp {
+		color: DarkSlateGray;
+		font-size: 120%;
+		padding: 3px;
+		margin: 5px;
+	}
+	.temp-bottom {
+		color: DarkSlateGray;
+		font-size: 120%;
+		padding: 3px;
+		margin-bottom: 10px;
+	}
+
+	#geo-spoof-advanced {
+		margin-top: 1%;
+		width: 15%;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 5px;
+		border: 1px solid SlateGray;
+		padding: 3px;
+	}
+
+	.hide-me {
+		display:none;
+	}
+
+	.tms-preset-space, .tms-custom-space, .tms-settings-options {
+		border-radius: 5px;
+		/* background: gray; */
+		padding: 5px;
+	}
+
+	.report-options {
+		margin: auto;
+		width: 80%;
+		border-radius: 5px;
+	}
+
+		.tms-inst {
+			width: 100%;
+			margin: 4px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 3px;
+			border-radius: 5px;
+			background-color: #dcdcdc;
+			color: #666666;
+			border-bottom: 1px solid gray;
+		}
+			.tms-inst-2 {
+				width: 80%;
+				margin: 4px;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 3px;
+				border-radius: 5px;
+				background-color: #e6e6e6 ;
+				color: #666666;
+			}
+
+	.tms-space-active {
+		color: GhostWhite;
+		display: block;
+		border-radius: 5px;
+		padding: 4px;
+		background: RoyalBlue;
+		margin-right: 3px;
+		margin-left: 3px;
+		margin-bottom: 8px;
+				-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+		transform: translateY(1px);
+	}
+
+	.tms-option-active:not([data-tms-option=disable]) {
+		background-color: green;
+		color: GhostWhite;
+		transform: translateY(1px);
+				-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+	}
+	.tms-option-active:not([data-tms-option=rewrite]):not([data-tms-option=inject]) {
+		background-color: red;
+		color: GhostWhite;
+		transform: translateY(1px);
+				-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+	}
+
+	#tms-setting-panel {
+		vertical-align: middle;
+		position: relative;
+		display: inline-block;
+		width: 55%;
+	/*	border: 1px dotted purple; */
+	}
+	#tms-setting-display {
+		vertical-align: middle;
+		position: relative;
+		display: inline-block;
+		width: 30%;
+	/*	border: 1px dotted purple; */
+		/* display: none; */
+	}
+		#tms-setting-display div {
+		/*	border: 1px dotted red; */
+		}
+
+		#tms-option-current,
+		#tms-space-current {
+			padding: 10px;
+			/* background-color: GhostWhite; */
+			border-radius: 10px;
+			overflow:auto;
+			border: 1px solid gray;
+		}
+
+			.tms-settings-valid {
+				background-color: yellow;
+			}
+
+	.tms-options-buttons {
+		margin: auto;
+		width: 80%;
+		padding: 5px;
+	}
+	.tms-options-spaces {
+		margin: auto;
+		width: 95%;
+		padding: 2px;
+	/*	border: 1px dotted orange; */
+	}
+
+		
+		/* .tms-options-spaces div, */
+		[data-tms-option] {
+			display: inline-block;
+			border-radius: 5px;
+			padding: 4px;
+			background: LightSlateGray;
+			color: Snow;
+			margin-right: 3px;
+			margin-left: 3px;
+					-webkit-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+			box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+		}
+			
+			[data-tms-option="rewrite"]:hover:not(.tms-option-active), 
+			[data-tms-option="inject"]:hover:not(.tms-option-active), 
+			[data-tms-option="disable"]:hover:not(.tms-option-active) {
+				background-color: LightBlue;
+				color: SteelBlue;
+			}
+
+			[data-tms-option]:active {
+			  		transform: translateY(1px);
+							-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+						-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				}
+
+		[data-tms-space]:not(.tms-space-active) {
+			display: block;
+			border-radius: 5px;
+			padding: 4px;
+			background: LightSlateGray;
+			color: Snow;
+			margin-right: 3px;
+			margin-left: 3px;
+			margin-bottom: 8px;
+					-webkit-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+			box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+		}
+
+			[data-tms-space]:hover:not(.tms-space-active) {
+				background-color: LightBlue;
+				color: SteelBlue;
+			}
+
+			[data-tms-space]:active {
+		  		transform: translateY(1px);
+						-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+			}
+
+		.tms-space-list {
+			display: inline-block;
+			width: 18%;
+			/* border: 1px solid red; */
+			margin: auto;
+			padding: 3px;
+		}	
+
+		.tms-nexus-test {
+
+			font-size: 80%;
+			padding: 2px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: LightSlateGray;
+			vertical-align: middle;
+		}
+		#nexus-toggle {
+			vertical-align: middle;
+			font-size: 90%;
+			color: LightSlateGray;
+			margin-top: 4px;
+		}
+		#nexus-test-toggle {
+			vertical-align: middle;
+			font-size: 200%;
+			padding: 2px;
+			color: LightSlateGray;
+		}
+			#nexus-test-on, #nexus-test-off {
+				padding-left: 8px;
+				padding-right: 8px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				border-radius: 5px;
+				color: LightSlateGray;
+			}
+				.nexus-test-active {
+					text-decoration: underline;
+				}
+		
+	#tms-footer-options, #api-footer-options, #geo-footer-options {
+		width: 80%;
+		padding-top: 8px;
+		padding-bottom: 7px;
+		/* border: 1px dotted green; */
+		margin: auto;
+
+	}
+		#tms-footer-options div, #api-footer-options div, #geo-footer-options div {
+			vertical-align: middle;
+		}
+		.all-clear-settings {
+		 	display: inline-block;
+			margin-left: 15px;
+			width: 25%;
+			padding: 5px;
+		}
+		 	.all-clear-settings:hover {
+				color: PaleVioletRed;
+		 	}
+		 	.all-clear-settings:active {
+				color: MediumVioletRed;
+		 	}
+
+		#tms-clear-settings, #api-clear-settings, #geo-clear-settings, #options-clear-settings{
+			display: inline-block;
+			margin: auto;
+			width: 25%;
+			padding: 5px;
+		}
+			#tms-clear-settings:hover, #api-clear-settings:hover, #geo-clear-settings:hover, #options-clear-settings:hover {
+				color: IndianRed;
+			}
+			#tms-clear-settings:active, #api-clear-settings:active, #geo-clear-settings:active, #options-clear-settings:active {
+				color: FireBrick;
+			}
+
+	#geo-options, #custom-geo-option {
+		width: 80%;
+		margin: auto;
+	}
+		#geo-options div {
+			display: inline-block;
+			padding: 5px;
+			width: 15%;
+			font-size: 110%;
+			text-align: center;
+		}
+		#geo-options img {
+			width: 75%;
+		}
+
+			#geo-options img:not(.geo-option-active) {
+				-webkit-filter: grayscale(95%);
+				filter: grayscale(95%);
+			}
+			#geo-options img:hover:not(.geo-option-active) {
+				-webkit-filter: grayscale(5%);
+				filter: grayscale(5%);
+			}
+
+			/*
+				.geo-option-active {
+					border: 2px solid RoyalBlue;
+					border-radius: 10px;
+					padding-left: 7px;
+					padding-right: 7px;
+				}
+			*/
+
+		.geo-option-active img {
+			-webkit-filter: grayscale(0%);
+			filter: grayscale(0%);
+		}
+			.geo-name-active {
+				color: RoyalBlue;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+
+		.geo-options span {
+			font-size: 150%;
+		}
+
+		#custom-geo-ip {
+			font-size: 150%;
+			text-align: center;
+			color: RoyalBlue;
+		}
+
+	#waf-tools-content-geo-settings p {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	#waf-tools-report-api-secret {
+		width: 200px;
+		/* height: 50px; */
+	}
+
+	#waf-tools-report-validate-settings,
+	#waf-tools-report-validate-retry {
+		font-family: "Artifakt-bold";
+		font-size: 20px;
+		margin: 5px;
+	}
+
+	#waf-tools-rewrite-space {
+		font-size: 115%;
+		text-align: center;
+	}
+
+	.api-success {
+		width: 12%;
+	}
+
+	.reporting-loader {
+		  font-size: 20px;
+		  margin: 100px auto;
+		  width: 1em;
+		  height: 1em;
+		  border-radius: 50%;
+		  position: relative;
+		  text-indent: -9999em;
+		  -webkit-animation: load4 1.3s infinite linear;
+		  animation: load4 1.3s infinite linear;
+		  -webkit-transform: translateZ(0);
+		  -ms-transform: translateZ(0);
+		  transform: translateZ(0);
+		}
+		@-webkit-keyframes load4 {
+		  0%,
+		  100% {
+		    box-shadow: 0 -3em 0 0.2em #B0C4DE, 2em -2em 0 0em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 0 #B0C4DE;
+		  }
+		  12.5% {
+		    box-shadow: 0 -3em 0 0 #B0C4DE, 2em -2em 0 0.2em #B0C4DE, 3em 0 0 0 #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  25% {
+		    box-shadow: 0 -3em 0 -0.5em #B0C4DE, 2em -2em 0 0 #B0C4DE, 3em 0 0 0.2em #B0C4DE, 2em 2em 0 0 #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  37.5% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0em 0 0 #B0C4DE, 2em 2em 0 0.2em #B0C4DE, 0 3em 0 0em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0em 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  50% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 0em #B0C4DE, 0 3em 0 0.2em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  62.5% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 0 #B0C4DE, -2em 2em 0 0.2em #B0C4DE, -3em 0 0 0 #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  75% {
+		    box-shadow: 0em -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0em 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 0.2em #B0C4DE, -2em -2em 0 0 #B0C4DE;
+		  }
+		  87.5% {
+		    box-shadow: 0em -3em 0 0 #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 0 #B0C4DE, -2em -2em 0 0.2em #B0C4DE;
+		  }
+		}
+		@keyframes load4 {
+		  0%,
+		  100% {
+		    box-shadow: 0 -3em 0 0.2em #B0C4DE, 2em -2em 0 0em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 0 #B0C4DE;
+		  }
+		  12.5% {
+		    box-shadow: 0 -3em 0 0 #B0C4DE, 2em -2em 0 0.2em #B0C4DE, 3em 0 0 0 #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  25% {
+		    box-shadow: 0 -3em 0 -0.5em #B0C4DE, 2em -2em 0 0 #B0C4DE, 3em 0 0 0.2em #B0C4DE, 2em 2em 0 0 #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  37.5% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0em 0 0 #B0C4DE, 2em 2em 0 0.2em #B0C4DE, 0 3em 0 0em #B0C4DE, -2em 2em 0 -1em #B0C4DE, -3em 0em 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  50% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 0em #B0C4DE, 0 3em 0 0.2em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 -1em #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  62.5% {
+		    box-shadow: 0 -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 0 #B0C4DE, -2em 2em 0 0.2em #B0C4DE, -3em 0 0 0 #B0C4DE, -2em -2em 0 -1em #B0C4DE;
+		  }
+		  75% {
+		    box-shadow: 0em -3em 0 -1em #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0em 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 0.2em #B0C4DE, -2em -2em 0 0 #B0C4DE;
+		  }
+		  87.5% {
+		    box-shadow: 0em -3em 0 0 #B0C4DE, 2em -2em 0 -1em #B0C4DE, 3em 0 0 -1em #B0C4DE, 2em 2em 0 -1em #B0C4DE, 0 3em 0 -1em #B0C4DE, -2em 2em 0 0 #B0C4DE, -3em 0em 0 0 #B0C4DE, -2em -2em 0 0.2em #B0C4DE;
+		  }
+		}
+
+	#out-1, #out-2 {
+		margin: auto;
+		width: 20%;
+		padding: 45px;
+	}
+
+	#contact-tool-buttons-holder {
+		width: 40%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.contact-tool-button {
+		display: block;
+		padding: 2%;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		font-size: 150%;
+		border-radius: 6px;
+		background: LightSlateGray;
+		color: Snow;
+		margin-right: auto;
+		margin-left: auto;
+				-webkit-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+	}
+		.contact-tool-button:hover {
+			background-color: LightBlue;
+			color: SteelBlue;
+		}
+
+		.contact-tool-button:active {
+		  		transform: translateY(1px);
+						-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+			}
+
+	.tools-contact-append {
+		display: none;
+		padding: 2px;
+		margin-top: 1%;
+	}
+
+	.waf-debug-report-form {
+		border-radius: 3px;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 150%;
+	}
+	.waf-debug-report-input {
+		width: 100%;
+		height: 128px;
+		overflow: auto;
+		font-family: inherit;
+  		font-size: 80%;
+  		vertical-align: middle;
+  		text-align: left;
+  		color: black;
+	}
+	.waf-debug-report-username {
+		width: 100%;
+		height: 25px;
+		overflow: auto;
+		font-family: inherit;
+  		font-size: 80%;
+  		vertical-align: middle;
+  		text-align: left;
+  		color: black;
+	}
+	.secret-help {
+		font-size: 100%;
+		padding: 3px;
+		color: gray;
+	}
+		.secret-help a {
+			color: purple;
+		}
+		
+	#waf-tools-report-api-user, #waf-tools-report-api-secret {
+		padding: 4px;
+		margin: 3px;
+		font-size: 105%;
+		width: 310px;
+	}
+
+	[data-report-date-option] {
+			display: block;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			font-size: 125%;
+			border-radius: 5px;
+			padding: 4px;
+			width: 20%;
+			background: LightSlateGray;
+			color: Snow;
+			margin-right: auto;
+			margin-left: auto;
+					-webkit-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+			box-shadow: 1px 2px 0px 0px rgba(0,0,0,0.75);
+			/* transition: all 0.3s ease 0s; */
+	}
+
+			[data-report-date-option]:hover:not(.report-option-active):not(.select-custom-option) {
+				background-color: LightBlue;
+				color: SteelBlue;
+			}
+
+			[data-report-date-option]:active {
+			  		transform: translateY(1px);
+							-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+						-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				}
+
+			.report-option-active {
+				color: GhostWhite;
+				display: block;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				font-size: 125%;
+				width: 20%;
+				border-radius: 5px;
+				padding: 4px;
+				background: RoyalBlue;
+				margin-right: auto;
+				margin-left: auto;
+						-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				transform: translateY(1px);
+				
+			}
+
+			.select-custom-option {
+				color: Yellow;
+				display: block;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				font-size: 125%;
+				width: 20%;
+				border-radius: 5px;
+				padding: 4px;
+				margin-right: auto;
+				margin-left: auto;
+						-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+					-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75);
+				transform: translateY(1px);
+				
+			}
+
+		#report-date-options {
+			padding: 10px;
+			width: 75%;
+			margin: auto;
+		}	
+
+		#report-date-option-range {
+			font-family: "Artifakt-book";
+		}
+
+	</style>
+
+	<link rel="stylesheet" href="/css/font-awesome.css">
+	
+
+	<script src="jquery.min.recent.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css"></link>
+
+	<!-- jQuery Date Range Picker -->
+	<script type="text/javascript" src="/daterange/jquery.comiseo.daterangepicker.js"></script>
+	<script type="text/javascript" src="/daterange/moment.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/daterange/jquery.comiseo.daterangepicker.css"></link>
+
+	
+
+	<script src="/js/apiPull.js"></script>
+
+</head>
+<body>
+
+<div id="settings-container">
+	<img id="logo" src="toolSettingsLogo.png">
+	<div id="tool-setting-options">
+		<a href="#tms"><div data-tools-menu="tms-settings" data-tools-active="true" class="setting-option active-option">TMS Settings</div></a>
+		<a href="#geo"><div data-tools-menu="geo-settings" data-tools-active="false" class="setting-option">GEO Spoof</div></a>
+		<a href="#api"><div data-tools-menu="api-settings" data-tools-active="false" class="setting-option">Report Credentials</div></a>
+		<a href="#options"><div data-tools-menu="report-options" data-tools-active="false" class="setting-option">Report Options</div></a>
+		<a href="#contact"><div data-tools-menu="contact-forms" data-tools-active="false" class="setting-option">Contact</div></a>
+	</div>
+
+	<div id="waf-tools-content-tms-settings" data-tools-visible="true" class="active-menu">
+		
+		<!-- <img id="out-1" src="/img/timeout.png">
+
+		<div class="hidden"> -->
+		
+			<p>Use the options below to either <b>inject</b> or <b>rewrite</b> the Ensighten Bootstrap. 
+			Specify the space in the text box.</p>
+			
+			<div id="tms-setting-panel" class="temp">
+				<div class="tms-settings-options">
+					<div class="tms-inst">select a Bootstrap option</div>
+					<div class="tms-options-buttons">
+						<div data-tms-option="rewrite">Rewrite</div>
+						<div data-tms-option="inject">Inject</div>
+						<div data-tms-option="disable">Disable</div>
+						
+						<!--
+						
+						-->
+					</div>
+				</div>
+				<div class="tms-preset-space">
+					<div class="tms-inst">select a <b>Space</b> and <b>Environment</b></div>
+					<div class="tms-options-spaces">
+						<div class="tms-inst-2">select any available option</div>
+						<div class="tms-space-list">
+							<b>DCOM</b>
+							<div data-tms-space="dcom_prod">PROD</div>
+							<div data-tms-space="dcom_stg">STG</div>
+							<div data-tms-space="dcom_qa">QA</div>
+						</div>
+						<div class="tms-space-list">
+							<b>MICRO</b>
+							<div data-tms-space="micro_prod">PROD</div>
+							<div data-tms-space="micro_stg">STG</div>
+							<div data-tms-space="micro_qa">QA</div>
+						</div>
+						<div class="tms-space-list">
+							<b>FLEX</b>
+							<div data-tms-space="flex_prod">PROD</div>
+							<div data-tms-space="flex_stg">STG</div>
+							<div data-tms-space="flex_qa">QA</div>
+						</div>
+						<div class="tms-space-list">
+							<b>ESTORE</b>
+							<div data-tms-space="estore_prod">PROD</div>
+							<div data-tms-space="estore_stg">STG</div>
+							<div data-tms-space="estore_qa">QA</div>
+						</div>
+					</div>
+					<div class="tms-custom-space">
+						<div class="tms-inst-2">OR specify a Custom Bootstrap Space:</div>
+						<input type="text" id="waf-tools-rewrite-space" placeholder="...">
+					</div>
+
+				</div>
+				
+			</div>
+
+			<div id="tms-setting-display" class="temp">
+				<div>
+				Bootstrap override:
+				</div>
+				<div id="tms-option-current">
+					<b id="tms-option">none active</b>
+				</div>
+				<br />
+				<div>
+				Space to override with:
+				</div>
+				<div id="tms-space-current">
+					<b id="tms-space">---</b>
+				</div>
+				<br />		
+				<i class="tms-nexus-test tms-inst-2">activate <b>nexus-test</b>?</i>
+				<br />
+				<div id="nexus-toggle">
+					<b id="nexus-test-off">off</b> 
+					<i id="nexus-test-toggle" class="fa fa-toggle-off" aria-hidden="true"></i> 
+					<b id="nexus-test-on">on</b>
+				</div>
+			</div>
+
+			<div id="tms-footer-options">
+				<div id="tms-clear-settings"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear TMS Settings</div>
+				<div class="all-clear-settings"><i class="fa fa-trash" aria-hidden="true"></i> Clear ALL Settings</div>
+			</div>
+		
+	</div>
+	
+	<div id="waf-tools-content-geo-settings" data-tools-visible="false" class="content-hide">
+
+		<!-- <img id="out-2" src="/img/timeout.png">
+
+		<div class="hidden"> -->
+
+			<p>Use the options below to turn on a <b>GEO Spoof</b> and specify your desired Country.</p>
+			<p>This feature is still under development, and may be somewhat buggy. To get it to work you may need to refresh a page 
+			once or twice. Please report any bugs through the <b>Contact</b> button in the WAFER. Thanks!</p>
+
+			<div id="geo-options">
+				<div>
+					<img src="/img/geo/japan.png" data-tools-geo-name="japan" data-tools-geo-spoof-ip="61.24.63.40">
+					<br />
+					<span id="geo-japan">Japan</span>
+				</div>
+				<div>
+					<img src="/img/geo/germany.png" data-tools-geo-name="germany" data-tools-geo-spoof-ip="81.201.83.45">
+					<br />
+					<span id="geo-germany">Germany</span>
+				</div>
+				<div>
+					<img src="/img/geo/uk.png" data-tools-geo-name="uk" data-tools-geo-spoof-ip="81.111.61.96">
+					<br />
+					<span id="geo-uk">UK</span>
+				</div>
+				<div>
+					<img src="/img/geo/brazil.png" data-tools-geo-name="brazil" data-tools-geo-spoof-ip="201.83.41.11">
+					<br />
+					<span id="geo-brazil">Brazil</span>
+				</div>
+				<br />
+				<div>
+					<img src="/img/geo/france.png" data-tools-geo-name="france" data-tools-geo-spoof-ip="2.15.255.255">
+					<br />
+					<span id="geo-france">France</span>
+				</div>
+				<div>
+					<img src="/img/geo/china.png" data-tools-geo-name="china" data-tools-geo-spoof-ip="163.177.112.32">
+					<br />
+					<span id="geo-china">China</span>
+				</div>
+				<div>
+					<img src="/img/geo/usa.png" data-tools-geo-name="us" data-tools-geo-spoof-ip="3.159.28.255">
+					<br />
+					<span id="geo-us">USA</span>
+				</div>
+				<div>
+					<img src="/img/geo/canada.png" data-tools-geo-name="canada" data-tools-geo-spoof-ip="192.206.151.131">
+					<br />
+					<span id="geo-canada">Canada</span>
+				</div>
+			</div>
+
+			<!--
+			<div id="custom-geo-option">
+				<p><b>OR</b></p>
+				<p>Enter a Custom IP address</p>
+				<input id="custom-geo-ip" placeholder="X.X.X.X">
+			</div>
+			-->
+
+			<div class="hidden">
+				<div id="geo-spoof-advanced">advanced</div>
+				<div id="geo-spoof-advanced-container" class="hide-me">
+					<div class="temp">use a specific IP (enter below)
+						<input type="checkbox" id="waf-tools-geo-spoof-specific-active" data-tools-geo-spoof-specific-active="false">
+					</div>
+						<input type="text" id="waf-tools-geo-spoof-specific" data-tools-geo-spoof-specific-ip="false">
+				</div>
+			</div>
+			<div id="geo-footer-options">
+				<div id="geo-clear-settings"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear GEO Settings</div>
+				<div class="all-clear-settings"><i class="fa fa-trash" aria-hidden="true"></i> Clear ALL Settings</div>
+			</div>
+
+	</div>
+
+	<div id="waf-tools-content-api-settings" data-tools-visible="false" class="content-hide">
+
+		<p id="api-instructions">Specify the values below to enable the Reporting features via the Adobe Reporting API.</p>
+		<p id="api-checking" class="hide-me">Validating API credentials</p>
+		<p id="api-settings-valid" class="hide-me">API credentials are valid and stored.</p>
+		<p id="api-settings-fail" class="hide-me">API credentials are invalid.</p>
+
+		<div id="waf-tools-api-checking" class="reporting-loader hide-me"></div>
+		<div id="waf-tools-api-not-set">
+			<div class="temp">
+				<span>What's your Adobe Analytics <b>User Name</b>?</span>
+				<br />
+				<span style="font-size:70%">(don't include the <i>:Autodesk</i> part)</span>
+				<br />
+				<input type="text" id="waf-tools-report-api-user" data-tools-report-api-user="false" placeholder="enter your User Name">
+			</div>
+			<div class="temp">
+				What's your <b>Shared Secret</b>?
+				<br />
+				<input type="text" id="waf-tools-report-api-secret" data-tools-report-api-secret="false" placeholder="enter your Secret">
+				<div class="secret-help">
+					<i><b><a href="https://wiki.autodesk.com/display/AWA/WAFER+-+Obtaining+Shared+Secret" target="_blank">how to obtain your Secret</a></b></i>
+				</div>
+			</div>
+			
+			
+			<div>
+				<button id="waf-tools-report-validate-settings">Validate
+			</div>
+		</div>
+		<div id="waf-tools-api-retry" class="hide-me">
+			<div>
+				<button id="waf-tools-report-validate-retry">Retry
+			</div>
+		</div>
+		<div id="waf-tools-api-valid" class="hide-me">
+			<div>
+				<img class="api-success" src="/img/checkmark.png">
+			</div>
+		</div>
+		<div id="api-footer-options">
+			<div id="api-clear-settings"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear API Settings</div>
+			<div class="all-clear-settings"><i class="fa fa-trash" aria-hidden="true"></i> Clear ALL Settings</div>
+		</div>
+
+	</div>
+
+	<div id="waf-tools-content-report-options" data-tools-visible="false" class="content-hide">
+
+		<p >
+		Select from the Reporting Options below.
+		<br/ >
+		(the <b style="color:blue">blue</b> option is the active one)
+		</p>
+
+		<div class="report-options">
+			<div data-report-date-option="7">Past 7 days</div>
+	        <div data-report-date-option="30">Past 30 days</div>
+	        
+	        <!-- Custom Date Option Picker -->
+	        <div data-report-date-option="custom">Advanced</div>
+	        <div id="report-date-options" class="hidden">
+	        	<div id="report-date-option-msg" class="tms-inst-2"></div>
+	        	<br />
+	        	<input id="report-date-option-range" placeholder="pick date range" />
+
+	        </div>
+        </div>
+        
+        	<!-- hidden fields for putting options in -->
+        	<input type="text" id="waf-tools-report-to-date" class="hidden">
+        	<input type="text" id="waf-tools-report-from-date" class="hidden">
+        	<input type="text" id="waf-tools-report-number-days" class="hidden">
+
+        <br />
+
+		<div id="options-footer-options">
+			<div id="options-clear-settings"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear Report Options</div>
+			<div class="all-clear-settings"><i class="fa fa-trash" aria-hidden="true"></i> Clear ALL Settings</div>
+		</div>
+
+	</div>
+
+	<div id="waf-tools-content-contact-forms" data-tools-visible="false" class="content-hide">
+
+		<!-- <img id="out-2" src="/img/timeout.png">
+
+		<div class="hidden"> -->
+
+		<p>Use the options below to contact the WAFER team.</p>
+		<div id="contact-tool-buttons-holder">
+            <div data-tools-contact="bug" class="contact-tool-button">Report a Bug</div>
+            <div data-tools-contact="feature" class="contact-tool-button">Request a Feature</div>
+            <div data-tools-contact="other" class="contact-tool-button">or Other</div>
+        </div>
+        <div id="tools-contact-append" class="tools-contact-append"></div>
+
+	</div>
+	
+	<div id="footer">
+		<i>remember - you can use the <b>Contact</b> tab to reach the WAFER team</i>
+	</div>
+
+</div>
+
+
+<script src="toolSettingsJS.js"></script>
+
+</body>
+
+
+</html>

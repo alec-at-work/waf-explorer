@@ -1,0 +1,214 @@
+<div id="waf-debug-edge">
+    <div id="waf-debug-block"> 
+    <img id="waf-debug-logo" src="chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/exploreLogo.png"></img> 
+    <img id="waf-debug-close-button" src="chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/closeX.png"></img>
+        <!-- MAIN MENU -->
+        <div id="waf-debug-main-menu">
+            <div data-debug-menu="info">PAGE</div>
+            <div data-debug-menu="analyze">ANALYZE</div>
+            <div data-debug-menu="tools">OTHER</div> 
+        </div>
+        <!--  PAGE SECTION  -->
+        <div id="waf-debug-content-info" class="debug-content" data-debug-visible="0">
+            <div class="debug-content-options">
+                <div data-debug-submenu-info="info">Details</div>
+                <div data-debug-submenu-info="data">Data</div>
+                <div data-debug-submenu-info="performance">Performance</div> 
+            </div>
+            <!-- PAGE DETAILS -->
+            <div id="waf-debug-info-info" data-debug-sub-visible="0">
+                <!-- <div id="waf-debug-content-info" class="debug-content" data-debug-visible="0"> -->
+                <!-- Page Level / digitalData Details -->
+                <i class="waf-debug-info-descrip">Page-level Details</i>
+                <div id="waf-debug-info-page">
+                    <div class="waf-debug-content-holder">
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Page Name</div>
+                            <div id="waf-debug-data-layer-pagename" class="waf-debug-holder-stack waf-debug-holder-b">...</div> 
+                        </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Product Name</div>
+                            <div id="waf-debug-data-layer-product" class="waf-debug-holder-stack waf-debug-holder-b">...</div>
+                        </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Campaign</div>
+                            <div id="waf-debug-campaign-type" class="waf-debug-holder-stack waf-debug-holder-b">...</div>
+                        </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Environment</div>
+                            <div id="waf-debug-data-layer-instance" class="waf-debug-holder-stack waf-debug-holder-b">...</div> 
+                        </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Report Suite</div>
+                            <div id="waf-debug-data-report-suite" class="waf-debug-holder-stack waf-debug-holder-b">...</div> 
+                        </div>
+                    </div>
+                    <!-- Supported Tracking Services -->
+                    <i class="waf-debug-info-descrip">other Services</i>
+                    <div id="waf-debug-info-services">
+                        <div class="waf-debug-content-holder">
+                            <table id="waf-debug-tracking-services-table">
+                                <tr class="waf-debug-tracking-header">
+                                    <td>name</td>
+                                    <td>active</td> </tr>
+                                <tr>
+                                    <td class="waf-debug-tracking-table-name">Foresee</td>
+                                    <td data-waf-debug-track-service="foresee">no</td> </tr>
+                                <tr>
+                                    <td class="waf-debug-tracking-table-name">Marketo (Munchkin)</td>
+                                    <td data-waf-debug-track-service="marketo-munchkin">no</td> </tr>
+                                <tr>
+                                    <td class="waf-debug-tracking-table-name">Marketo (Form)</td>
+                                    <td data-waf-debug-track-service="marketo-aem">no</td> </tr>
+                                <tr>
+                                    <td class="waf-debug-tracking-table-name">Test & Target (TnT)</td>
+                                    <td data-waf-debug-track-service="tnt">no</td> </tr>
+                                <tr>
+                                    <td class="waf-debug-tracking-table-name">active TnT mbox</td>
+                                    <td data-waf-debug-track-service="tnt-mbox">no</td> </tr> 
+                            </table> 
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+            <!-- DATA LAYER -->
+            <div id="waf-debug-info-data" data-debug-sub-visible="0">
+                <!-- <div id="waf-debug-content-info" class="debug-content" data-debug-visible="0"> -->
+                <!-- Foundation Requirements -->
+                <i class="waf-debug-info-descrip">details of the <b id="waf-debug-hide-data-layer-container">digitalData</b> JSON object</i>
+                <div id="waf-debug-data-layer">
+                    <div class="waf-debug-content-holder waf-debug-data-layer-display"> not detected </div> 
+                </div> <i class="waf-debug-info-descrip">details of the <b id="waf-debug-hide-sobj-container">SiteCatalyst</b> object</i>
+                <div id="waf-debug-data-sitecat-obj">
+                    <div class="waf-debug-content-holder waf-debug-data-sitecat-obj-display"> not detected </div> 
+                </div> 
+            </div>
+            <!-- PERFORMANCE -->
+            <div id="waf-debug-info-performance" data-debug-sub-visible="0">
+                <!-- <div id="waf-debug-content-info" class="debug-content" data-debug-visible="0"> -->
+                <!-- Foundation Requirements --><i class="waf-debug-info-descrip">Page performance metrics</i>
+                <div id="waf-debug-performance">
+                    <div class="waf-debug-content-holder">
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-b">Page Load Latency</div>
+                            <div id="waf-debug-req-latency" class="waf-debug-holder-stack waf-debug-holder-a">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-b">Time to Page Load Tracking</div>
+                            <div id="waf-debug-req-page-load-track" class="waf-debug-holder-stack waf-debug-holder-a">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-b">TMS Load Time</div>
+                            <div id="waf-debug-req-tms-load-time" class="waf-debug-holder-stack waf-debug-holder-a">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-b">TMS Errors</div>
+                            <div id="waf-debug-req-tms-errors" class="waf-debug-holder-stack waf-debug-holder-a">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-b">Responsive Breakpoint</div>
+                            <div id="waf-debug-req-breakpoint" class="waf-debug-holder-stack waf-debug-holder-a">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!--  ANALYZE SECTION  -->
+        <div id="waf-debug-content-analyze" class="debug-content" data-debug-visible="0">
+            <div class="debug-content-options">
+                <div data-debug-submenu-track="inspect">Inspector</div>
+                <div data-debug-submenu-track="requirements">Requirements</div>
+                <!-- <div data-debug-submenu-track="tags">Link Tags</div> -->
+             </div>
+            <!-- FOUNDATION REQUIREMENTS -->
+            <div id="waf-debug-track-requirements" data-debug-sub-visible="0">
+                <!-- Foundation Requirements -->
+                <i class="waf-debug-info-descrip">Requirements for Foundation</i>
+                <div id="waf-debug-info-reqs">
+                    <div class="waf-debug-content-holder">
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">jQuery</div>
+                            <div id="waf-debug-req-jquery" class="waf-debug-holder-stack waf-debug-holder-b">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">Data Layer</div>
+                            <div id="waf-debug-req-data-layer" class="waf-debug-holder-stack waf-debug-holder-b">...</div> </div>
+                        <div class="waf-debug-holder">
+                            <div class="waf-debug-holder-stack waf-debug-holder-a">TMS</div>
+                            <div id="waf-debug-req-tms" class="waf-debug-holder-stack waf-debug-holder-b">...</div> </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- LINK TRACKING TAGS -->
+            <div id="waf-debug-track-inspect" data-debug-sub-visible="0">
+                <!-- Supported Tracking Types -->
+                <i class="waf-debug-info-descrip">on-page Link Tagging</i>
+                <div id="waf-debug-info-tagging">
+                    <div class="waf-debug-content-holder">
+                        <table id="waf-debug-tracking-options">
+                            <tr class="waf-debug-tracking-header">
+                                <td>tracking type</td>
+                                <td>show</td>
+                                <td>count</td> </tr>
+                            <tr>
+                                <td class="waf-debug-tracking-table-name">Links</td>
+                                <td>
+                                    <input type="checkbox" data-waf-debug-track="links" class="waf-debug-checkbox">
+                                    <br> </td>
+                                <td data-waf-debug-track-count="links"></td> </tr>
+                            <tr>
+                                <td class="waf-debug-tracking-table-name">Buy Links (Path to Purchase)</td>
+                                <td>
+                                    <input type="checkbox" data-waf-debug-track="buy" class="waf-debug-checkbox">
+                                    <br> </td>
+                                <td data-waf-debug-track-count="buy"></td> </tr>
+                            <!--	<tr>								<td class="waf-debug-tracking-table-name">Trials</td>								<td><input type="checkbox" data-waf-debug-track="trials" class="waf-debug-checkbox"><br></td>								<td data-waf-debug-track-count="trials"></td>							</tr> -->
+                            <tr>
+                                <td class="waf-debug-tracking-table-name">Cloud Trials</td>
+                                <td>
+                                    <input type="checkbox" data-waf-debug-track="cloud" class="waf-debug-checkbox">
+                                    <br> </td>
+                                <td data-waf-debug-track-count="cloud"></td> </tr>
+                            <tr>
+                                <td class="waf-debug-tracking-table-name">Social Share</td>
+                                <td>
+                                    <input type="checkbox" data-waf-debug-track="social" class="waf-debug-checkbox">
+                                    <br> </td>
+                                <!-- <td><div class="waf-debug-track-select-color" data-waf-debug-track="social">off</div></td> -->
+                                <td data-waf-debug-track-count="social"></td> </tr> 
+                        </table> 
+                    </div> 
+                </div>
+                <div id="waf-debug-tracking-remove" class="waf-debug-tracking-remove-inactive">Remove Highlighting</div> 
+                <!-- INSPECTOR -->  
+                <!-- Hover to unveil tagging -->
+                <i class="waf-debug-info-descrip">hover over tagged elements to inspect</i>
+                <div id="waf-debug-hover-inspect"></div> <i class="waf-debug-info-descrip">any <b>v21</b> values detected will show below</i>
+                <div id="waf-debug-hover-report-data"> <b id="waf-debug-hover-report-data-output"></b> </div>
+                <div id="waf-debug-inspect-setting">
+                    <input type="checkbox" data-debug-inspect-type="mouseenter" checked> 
+                    <span id="waf-debug-inspect-type-msg">leave values after hover</span> 
+                </div> 
+            </div> 
+        </div>
+                     
+        <!-- TOOLS -->
+        <div id="waf-debug-content-tools" class="debug-content" data-debug-visible="0">
+            <div class="debug-content-options">
+                <div data-debug-submenu-tools="tms-details">TMS Inspector</div>
+                <div data-debug-submenu-tools="report">Contact</div> </div>
+            <!-- Explore the TMS -->
+            <div id="waf-debug-tools-tms-details" data-debug-sub-visible="0"> <i class="waf-debug-info-descrip">TMS deployments on this page</i>
+                <div id="waf-tool-tms-details">
+                    <div data-debug-tms-get-deployments="true">Get the Deployments</div> </div> <i class="waf-debug-info-descrip hidden" id="tms-deployments-descrip">synchronously loaded deployments appear <b style="color:red">red</b></i> </div>
+            <!-- Contact the Team -->
+            <div id="waf-debug-tools-report" data-debug-sub-visible="0"> <i class="waf-debug-info-descrip">contact the team</i>
+                <div id="waf-tool-buttons-holder">
+                    <div data-debug-report="bug" class="waf-tool-button">Report a Bug</div>
+                    <div data-debug-report="feature" class="waf-tool-button">Request a Feature</div>
+                    <div data-debug-report="other" class="waf-tool-button">or Other</div> </div>
+                <div id="waf-debug-report-append" class="waf-tools-append"></div> </div> </div>
+        <!-- STATUS -->
+        <div id="waf-debug-main-status">
+            <div class="debug-main-status"><i>S T A T U S : </i> </div>
+            <div id="waf-debug-status" class="debug-main-status"></div> </div> </div>
+    <!-- DRAGGABLE PIECES -->
+    <div id="waf-debug-drag-top"></div>
+    <div id="waf-debug-drag-bottom"></div>
+</div>
+</div>
